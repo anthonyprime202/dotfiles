@@ -1,0 +1,65 @@
+#!/usr/bin/env bash
+
+uptime="`uptime -p | sed -e 's/up //g'`"
+
+poweroff=""
+lock=""
+restart=""
+logout="󰍂"
+
+
+run_rofi() {
+	echo -e "$lock\n$logout\n$restart\n$poweroff" | rofi -dmenu \
+        -mesg "Uptime: $uptime" \
+        -theme "/home/anthonyprime/.config/rofi/plugins/powermenu.rasi"
+}
+
+confirm_exit() {
+    echo -e "Yes\nNo" | rofi -dmenu \
+        -theme-str "listview { columns:2; }" \
+        -theme-str 'element-text { font: "JetBrainsMonoNL Nerd Font 15"; }' \
+        -theme-str 'element-text { horizontal-align: 0.45; }' \
+        -theme-str "element { padding: 20px; }" \
+        -theme-str "window { padding: 392px 500px; }" \
+        -mesg "Are you sure?" \
+        -theme "/home/anthonyprime/.config/rofi/plugins/powermenu.rasi" \
+        -hover-select
+}
+
+run_cmd() {
+    selected="$(confirm_exit)"
+    if [[ $selected == "No" ]]; then
+        exit 0
+    elif [[ $selected == "Yes" ]]; then
+        if [[ $1 == "--poweroff" ]]; then
+            systemctl poweroff
+        elif [[ $1 == "--restart" ]]; then
+            systemctl reboot
+        elif [[ $1 == "--logout" ]]; then
+            hyprctl dispatch exit 
+        elif [[ $1 == "--lock" ]]; then
+            lock
+        fi
+    fi
+}
+
+chosen="$(run_rofi)"
+echo "$chosen"
+case ${chosen} in
+    $poweroff)
+		run_cmd --poweroff
+        ;;
+    $lock) 
+        run_cmd --lock
+        ;;
+    $restart) 
+        run_cmd --restart
+        ;;
+    $logout) 
+        run_cmd --logout
+        ;;
+    *) 
+        exit 0 
+        ;;
+esac
+

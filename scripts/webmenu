@@ -1,0 +1,88 @@
+#!/bin/sh
+
+aniwatch_link="https://hianime.to/home"
+youtube_link="https://youtube.com"
+ags_docs_link="https://aylur.github.io/ags-docs"
+hyprland_docs_link="https://wiki.hyprland.org/"
+unixporn_link="https://www.reddit.com/r/unixporn/"
+gemini_link="https://gemini.google.com/"
+chatgpt_link="https://chat.openai.com/"
+whatsapp_link="https://web.whatsapp.com/"
+instagram_link="https://www.instagram.com/"
+primevideo_link="https://www.primevideo.com/"
+netflix_link="https://www.netflix.com/in/"
+hotstar_link="https://www.hotstar.com/in/home"
+ags_github_link="https://github.com/Aylur/ags"
+
+options=(
+    "Hianime\0icon\x1fhianime\x1finfo\x1ftest\x1fmeta\x1fhianimestreaminganime\n"
+    "Youtube\0icon\x1fyoutube\x1fmeta\x1fyoutube\n" 
+    "Ags Docs\0icon\x1fags\x1fmeta\x1fagsdocs\n" 
+    "Ags Github\0icon\x1fgithub\x1fmeta\x1fagsgithubsource\n" 
+    "Hyprland Docs\0icon\x1fhyprland\x1fmeta\x1fdocshyprland\n"
+    "Unixporn\0icon\x1funixporn\x1fmeta\x1fredditunixporn\n"
+    "Gemini\0icon\x1fgeminiai\x1fmeta\x1fgeminiai\n"
+    "ChatGPT\0icon\x1fchatgpt\x1fmeta\x1fchatgptfai\n"
+    "Whatsapp\0icon\x1fwhatsapp\x1fmeta\x1fwhatsapp\n"
+    "Instagram\0icon\x1finstagram\x1fmeta\x1finstagram\n"
+    "Prime Video\0icon\x1fprimevideo\x1fmeta\x1fprimevideostreaming\n"
+    "Netflix\0icon\x1fnetflix\x1fmeta\x1fnetflixstreaming\n"
+    "Hotstar\0icon\x1fhotstar\x1fmeta\x1fdisneyplushotstarstreaming\n"
+)
+
+option_str=""
+
+for item in "${options[@]}" 
+do
+    option_str+="${item}"
+done
+
+selected="$(echo -en $option_str | rofi -dmenu -theme ~/.config/rofi/themes/appmenu.rasi -p Web)"
+
+case $selected in 
+    "Hianime")
+        xdg-open $aniwatch_link 
+        ;;
+    "Youtube")
+        xdg-open $youtube_link
+        ;;
+    "Ags Docs")
+        xdg-open $ags_docs_link
+        ;;
+    "Ags Github")
+        xdg-open $ags_github_link
+        ;;
+    "Hyprland Docs") 
+        xdg-open $hyprland_docs_link 
+        ;;
+    "Unixporn") 
+        xdg-open $unixporn_link 
+        ;;
+    "Gemini") 
+        xdg-open $gemini_link 
+        ;;
+    "ChatGPT") 
+        xdg-open $chatgpt_link
+        ;;
+    "Whatsapp") 
+        xdg-open $whatsapp_link
+        ;;
+    "Instagram") 
+        xdg-open $instagram_link
+        ;;
+    "Prime Video") 
+        xdg-open $primevideo_link
+        ;;
+    "Netflix") 
+        xdg-open $netflix_link
+        ;;
+    "Hotstar") 
+        xdg-open $hotstar_link
+        ;;
+    *) 
+        if [[ -n "${selected[0]}" ]]; then
+        firefox --search "$selected"
+        fi
+esac
+
+

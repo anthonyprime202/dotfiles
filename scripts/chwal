@@ -1,0 +1,14 @@
+#!/bin/sh
+
+convert $1 ~/.config/settings/wallpaper.png
+
+convert ~/.config/settings/wallpaper.png -blur 10x10 ~/.config/settings/blur_wallpaper.png
+
+swww img -t grow --transition-pos top-left $1
+
+echo "Updated Wallpaper."
+
+echo "Enter passowrd to update sddm background."
+
+sudo cp ~/.config/settings/blur_wallpaper.png /usr/share/sddm/themes/corners/backgrounds/background.png 
+
