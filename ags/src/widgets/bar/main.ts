@@ -2,6 +2,7 @@ import { PowerButton, MenuButton } from "./buttons"
 import Clock from './clock';
 import Battery from "./battery";
 import Workspaces from "./workspaces";
+import SystemTray from "./systray";
 
 const BarWidget = () => Widget.CenterBox({
     startWidget: Widget.Box({
@@ -14,7 +15,7 @@ const BarWidget = () => Widget.CenterBox({
     }),
     endWidget: Widget.Box({
         hpack: 'end',
-        children: [Battery(), PowerButton()]
+        children: [SystemTray(), Battery(), PowerButton()]
     })
 })
 
