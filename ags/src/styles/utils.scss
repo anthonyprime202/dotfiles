@@ -1,0 +1,43 @@
+@use 'colors';
+
+@mixin inline-padding($padding) {
+  padding-left: $padding;
+  padding-right: $padding;
+}
+
+@mixin block-padding($padding) {
+  padding-top: $padding;
+  padding-bottom: $padding;
+}
+
+@mixin inline-margin($margin) {
+  margin-left: $margin;
+  margin-right: $margin;
+}
+
+@mixin block-margin($margin) {
+  margin-top: $margin;
+  margin-bottom: $margin;
+}
+
+@mixin opacity-reactions {
+  &:hover {
+    opacity: 0.7;
+  }
+
+  &:active {
+    opacity: 0.5;
+  }
+}
+
+@mixin background-reactions($color) {
+
+  &:hover,
+  &:focus {
+    background: transparentize($color, $amount: 0.8);
+  }
+
+  &:active {
+    opacity: 0.7;
+  }
+}

@@ -1,0 +1,267 @@
+@use 'colors';
+@use 'utils' as *;
+
+$border-radius: 30px;
+$bar-height: 36px;
+$pill-height: 32px;
+
+@mixin pill-shadow {
+  box-shadow: 0px 2px 2px transparentize(black, 0.5);
+}
+
+.bar-window {
+  font-size: 0.8rem;
+  color: colors.$text;
+  font-weight: bold;
+  background: none;
+}
+
+tooltip {
+  background: colors.$surface;
+  font-family: "JetBrainsMono Nerd Font";
+}
+
+.bar-left-container,
+.bar-center-container,
+.bar-right-container {
+  background: colors.$base;
+  border-radius: 30px;
+  min-height: $bar-height;
+  @include pill-shadow;
+  @include block-margin(4px);
+}
+
+.bar-left-container {
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+}
+
+.bar-right-container {
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+/* Side Buttons */
+
+.bar-menu-button {
+  font-size: 1.1rem;
+  margin-right: -8px;
+}
+
+.bar-power-button {
+  margin-left: -8px;
+
+  image {
+    font-size: 1.3rem;
+    color: colors.$red;
+  }
+}
+
+.bar-menu-button,
+.bar-power-button {
+  @include inline-padding(2rem);
+  @include opacity-reactions;
+}
+
+/* Workspaces */
+
+.bar-workspace-widget {
+  $size: 0.58rem;
+  $spacing: 0.6rem;
+  background: colors.$surface;
+  min-height: $pill-height;
+  border-radius: $border-radius;
+  @include inline-padding($spacing);
+  @include inline-margin(2px);
+  @include pill-shadow;
+
+  .bar-workspace-fill {
+    min-width: $size * .8;
+    min-height: $size * .8;
+    background: colors.$overlay;
+    border-radius: $size / 2;
+    transition: all 0.10s;
+    @include inline-margin($spacing/2);
+  }
+
+  .bar-active-workspace {
+    .bar-workspace-fill {
+      min-width: $size;
+      min-height: $size;
+      background: colors.$primary;
+    }
+  }
+
+  .bar-focused-workspace {
+    .bar-workspace-fill {
+      min-width: $size * 2.5;
+    }
+  }
+
+}
+
+/* Player */
+
+.bar-player-widget {
+  .bar-player-progress {
+    font-size: 0.2rem;
+    min-height: 26px;
+    background: colors.$surface;
+
+    .bar-player-icon {
+      font-size: 0.7rem;
+      color: colors.$text;
+    }
+  }
+
+  @include inline-margin(1rem);
+  margin-left: 8px;
+}
+
+/* Clock */
+
+.bar-clock-widget {
+  @include inline-margin(1rem);
+}
+
+/* Tools Tray */
+
+.bar-tool-tray {
+  $spacing: 1rem;
+  background: colors.$surface;
+  min-height: $pill-height;
+  border-radius: $border-radius;
+  @include pill-shadow;
+  @include inline-margin(2px);
+  font-size: 0.9rem;
+
+  button {
+    @include background-reactions(colors.$overlay);
+    min-width: 22px;
+    padding: 0.1rem;
+    border-radius: 100%;
+    min-width: $pill-height;
+  }
+}
+
+/* System Tray */
+
+.bar-systray-widget {
+  min-height: $pill-height;
+  background: colors.$surface;
+  border-radius: $border-radius;
+  font-size: 1.2rem;
+  @include pill-shadow;
+  @include inline-margin(2px);
+
+  button {
+
+    @include background-reactions(colors.$overlay);
+    border-radius: 100%;
+    min-width: $pill-height;
+  }
+}
+
+menu {
+  background: colors.$base;
+  padding: 2px;
+  border-radius: 5px;
+  @include pill-shadow;
+  margin: 7px;
+  border: 1px solid colors.$surface;
+}
+
+menuitem {
+  @include block-padding(4px);
+  @include inline-padding(10px);
+
+  &:hover {
+    background: colors.$surface;
+  }
+}
+
+/* Info */
+
+.bar-info-widget {
+
+  .bar-brightness-info {
+    @include inline-padding(8px);
+
+    image {
+      color: colors.$yellow;
+      font-size: 1.15rem;
+    }
+  }
+
+  .bar-microphone-info {
+    @include inline-padding(8px);
+
+    image {
+      color: colors.$purple;
+      font-size: 1.15rem;
+    }
+  }
+
+  .bar-speaker-info {
+    @include inline-padding(8px);
+
+    image {
+      color: colors.$blue;
+      font-size: 1.15rem;
+    }
+  }
+}
+
+/* Battery */
+
+.bar-battery-widget {
+  background: colors.$surface;
+  min-height: $pill-height;
+  border-radius: $border-radius;
+  font-weight: bold;
+  @include pill-shadow;
+  @include inline-padding(7px);
+  @include inline-margin(2px);
+
+  .bar-battery-progress {
+    min-height: 26px;
+    min-width: 26px;
+    font-size: 0.25rem;
+    background: colors.$overlay;
+
+    image {
+      font-size: 0.70rem;
+      color: colors.$text;
+    }
+
+  }
+
+
+}
+
+.bar-battery-good {
+  .bar-battery-progress {
+    color: colors.$green;
+  }
+}
+
+.bar-battery-warning {
+  .bar-battery-progress {
+    color: colors.$yellow;
+  }
+}
+
+.bar-battery-critical {
+  .bar-battery-progress {
+    color: colors.$red;
+  }
+}
+
+.bar-battery-charging {
+  .bar-battery-progress {
+    image {
+      color: colors.$green;
+      font-size: 1rem;
+    }
+  }
+}

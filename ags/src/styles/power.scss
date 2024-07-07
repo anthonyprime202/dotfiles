@@ -1,0 +1,86 @@
+@use "colors";
+@use "utils" as *;
+
+
+
+.confirm-window-container {
+  font-family: "JetBrainsMono Nerd Font";
+  background: colors.$mantle;
+  border-radius: 5px;
+  color: colors.$text;
+  margin: 10px;
+  box-shadow: 0 4px 4px transparentize(black, 0.5);
+
+  >label {
+    @include block-padding(20px);
+    font-size: 1.2rem;
+    background: colors.$base;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+
+    span {
+      color: colors.$red;
+    }
+  }
+
+
+
+  button {
+    padding: 10px 70px;
+    font-size: 1.1rem;
+    @include background-reactions(colors.$overlay);
+    border-radius: 0;
+  }
+
+  .confirm-yes-button {
+    border-bottom-left-radius: 5px;
+
+    label {
+      color: colors.$red;
+    }
+  }
+
+  .confirm-no-button {
+    border-bottom-right-radius: 5px;
+  }
+}
+
+
+.power-widget {
+  background: colors.$base;
+  padding: 10px 30px;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  box-shadow: 0 0 8px transparentize(black, 0);
+  border: 1px solid colors.$surface;
+  margin: 20px;
+  margin-bottom: 0;
+
+  button {
+    font-size: 60px;
+    padding: 30px;
+    @include background-reactions(colors.$overlay);
+    @include inline-margin(10px);
+  }
+}
+
+.power-lock-button image {
+
+  color: colors.$blue;
+}
+
+.power-logout-button image {
+  color: colors.$purple;
+}
+
+.power-suspend-button image {
+  color: colors.$green;
+}
+
+.power-restart-button image {
+  color: colors.$yellow;
+}
+
+.power-shutdown-button image {
+  color: colors.$red;
+}

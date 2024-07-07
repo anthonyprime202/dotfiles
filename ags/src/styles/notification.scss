@@ -1,0 +1,126 @@
+@use "colors";
+@use "utils" as *;
+
+
+.notification-panel-widget {
+  min-width: 27rem;
+  min-height: 60rem;
+  background: colors.$base;
+  border: 1px solid colors.$surface;
+  border-left: none;
+  border-bottom-right-radius: 5px;
+  border-top-right-radius: 5px;
+  margin: 15px;
+  margin-left: 0;
+  padding: 10px 20px;
+  box-shadow: 3px 6px 6px transparentize(black, 0.4);
+
+  .notification-panel-header {
+    padding: 10px;
+
+    >label {
+      font-size: 1.4rem;
+      font-weight: bold;
+    }
+
+    >button {
+      background: colors.$surface;
+      padding: 0.6em 1.5em;
+      border-radius: 3px;
+      box-shadow: 1px 2px 2px transparentize(black, 0.6);
+      @include opacity-reactions();
+    }
+  }
+
+  .notification-panel-cover {
+
+    image {
+      font-size: 8rem;
+      @include block-margin(0.5rem);
+    }
+
+    label {
+      font-size: 1.3rem;
+      @include block-margin(0.5rem);
+    }
+  }
+
+}
+
+
+.notification-popup-container {
+  min-width: 26rem;
+  background: colors.$mantle;
+  box-shadow: 0 4px 4px transparentize(black, 0.7);
+  border-radius: 5px;
+  @include block-margin(10px);
+  border: 1px solid colors.$surface;
+
+  .notification-popup-details-container {
+    margin: 10px;
+    min-height: 4.375rem;
+  }
+
+  .notification-popup-image {
+    min-width: 70px;
+    min-height: 70px;
+    font-size: 70px;
+    border-radius: 5px;
+  }
+
+  .notification-popup-summary {
+    font-size: 1rem;
+    font-weight: bold;
+  }
+
+  .notification-popup-time {
+    font-size: 0.8rem;
+    color: colors.$subtext;
+  }
+
+  .notification-popup-close-button {
+    font-size: 1rem;
+    border-radius: 100%;
+    min-width: 1.2rem;
+    min-height: 1.2rem;
+    @include background-reactions(colors.$overlay);
+  }
+
+  .notification-popup-body {
+    font-size: 0.8rem;
+    color: colors.$subtext;
+
+    selection {
+      background: colors.$surface;
+    }
+  }
+
+
+  .notification-popup-actions-container {
+    background: colors.$base;
+    border-bottom-left-radius: 5px;
+    min-height: 32px;
+
+    button {
+      @include background-reactions(colors.$overlay);
+    }
+  }
+
+}
+
+.notification-popups-popup {
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+.notification-popup-low-urgency {
+  border-right: 4px solid colors.$green;
+}
+
+.notification-popup-normal-urgency {
+  border-right: 4px solid colors.$blue;
+}
+
+.notification-popup-critical-urgency {
+  border-right: 4px solid colors.$red;
+}

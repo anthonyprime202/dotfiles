@@ -1,0 +1,18 @@
+configuration {
+    modes: "drun,run";
+    terminal: "foot";
+    icon-theme: "Papirus-Dark";
+    drun-display-format: "{name}";
+    steal-focus: true;
+    timeout {
+	action: "kb-cancel";
+	delay:  0;
+    }
+    filebrowser {
+	directories-first: true;
+	sorting-method:    "name";
+    }
+}
+
+@theme "~/.config/rofi/theme.rasi"
+

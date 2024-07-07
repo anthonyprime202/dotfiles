@@ -1,0 +1,33 @@
+
+/*
+* {
+    red: #e67e80;
+    blue: #7FBBB3;
+    green: #A7C080;
+    yellow: #dbbc7f;
+    purple: #D699B6;
+    text: #D3C6AA;
+    subtext: #9DA9A0;
+    mantle: #1E2326;
+    base: #272E33;
+    surface: #3741457a;
+    overlay: #7A8478;
+}
+
+    */
+
+* {
+    text: #cdd6f4;
+    subtext: #bac2de;
+
+    overlay: #6c7086;
+    surface: #3132447a;
+    base: #1e1e2e;
+    mantle: #181825;
+
+    red: #f38ba8;
+    blue: #89b4fa;
+    green: #a6e3a1;
+    yellow: #f9e2af;
+    purple: #cba6f7;
+}

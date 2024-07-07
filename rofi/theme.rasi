@@ -1,0 +1,62 @@
+@theme "/dev/null"
+@theme "~/.config/rofi/colors.rasi"
+* {
+    text-color: @text;
+    background-color: transparent;
+}
+
+window {
+    location: north;
+    width: 800px;
+    y-offset: 8px;
+}
+
+mainbox {
+    children: [inputbar, listview];
+    border-radius: 5px;
+    border-color: @surface;
+    border: 1px;
+    spacing: 0;
+}
+
+inputbar {
+    children: [entry];
+    background-color: @surface;
+}
+
+entry {
+    placeholder: "Search";
+    margin: 10px;
+    padding: 10px;
+    placeholder-color: @subtext;
+}
+
+listview {
+    lines: 3;
+    columns: 2;
+    scrollbar: false;
+    background-color: @base;
+    border: 20px;
+    border-color: @mantle;
+    padding: 5px;
+}
+
+element {
+    children: [element-icon, element-text];
+    border-radius: 5px;
+    margin: 5px ;
+    padding: 10px;
+    spacing: 20px;
+}
+
+element selected {
+    background-color: @surface;
+}
+
+element-icon {
+    size: 1.8em;
+}
+
+element-text {
+    vertical-align: 0.5;
+}

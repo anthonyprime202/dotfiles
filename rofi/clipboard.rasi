@@ -1,0 +1,12 @@
+@theme "~/.config/rofi/theme.rasi"
+
+listview {
+    columns: 1;
+    lines: 10;
+}
+
+element {
+    padding: 3px 15px;
+    margin: 2px;
+    children: [element-text];
+}

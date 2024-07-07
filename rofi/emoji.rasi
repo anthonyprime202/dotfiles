@@ -1,0 +1,13 @@
+@theme "~/.config/rofi/theme.rasi"
+
+listview {
+    columns: 9;
+    lines: 4;
+}
+
+element {
+    children: [element-text];
+}
+element-text {
+    horizontal-align: 0.5;
+}
