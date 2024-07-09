@@ -8,7 +8,7 @@
 window {
     location: north;
     width: 800px;
-    y-offset: 8px;
+    y-offset: 25px;
 }
 
 mainbox {

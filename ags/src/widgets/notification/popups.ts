@@ -1,7 +1,6 @@
 import Popup from "./notification"
 
 const Notifications = await Service.import("notifications")
-Notifications.popupTimeout = 5000
 const NotificationPopupsWidget = () =>
     Widget.Box({
         vertical: true,

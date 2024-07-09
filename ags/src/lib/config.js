@@ -1,3 +1,7 @@
+const Notification = await Service.import("notifications")
+Notification.popupTimeout = 10000
+Notification.forceTimeout = false
+
 export default {
     workspaceCount: 10,
     maxPopups: 5,

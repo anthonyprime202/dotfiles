@@ -3,7 +3,22 @@ configuration {
     terminal: "foot";
     icon-theme: "Papirus-Dark";
     drun-display-format: "{name}";
-    steal-focus: true;
+
+    // Fixes
+    kb-mode-complete: "";
+    kb-remove-to-eol: "";
+    kb-accept-entry: "Return,KP_Enter";
+    kb-remove-char-back: "BackSpace,Shift+BackSpace";
+
+    // Binds
+    kb-row-left: "Control+h";
+    kb-row-right: "Control+l";
+    kb-row-up: "Control+k";
+    kb-row-down: "Control+j";
+    kb-entry-history-up: "Control+Shift+j";
+    kb-entry-history-down: "Control+Alt+k";
+
+
     timeout {
 	action: "kb-cancel";
 	delay:  0;
