@@ -1,0 +1,19 @@
+@theme "~/.config/rofi/config.rasi"
+
+
+configuration {
+    modi: "zellij:~/.config/rofi/scripts/zellij";
+}
+
+listview {
+    columns: 1;
+    dynamic: true;
+    fix-height: false;
+    lines: 5;
+}
+
+element {
+    padding: 3px 15px;
+    margin: 2px;
+    children: [element-text];
+}

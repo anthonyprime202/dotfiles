@@ -1,0 +1,6 @@
+#!/bin/sh
+if [ -z "$1" ]; then
+    zellij list-sessions | awk '{print $1}' | sed -r 's/\x1B\[[0-9;]*m//g'
+else 
+    coproc foot zellij attach $1 > /dev/null
+fi
