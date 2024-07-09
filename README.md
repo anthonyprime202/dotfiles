@@ -1,6 +1,6 @@
 # My Ever Incomplete Catppuccin Rice
 
-## Softwares ⚙️
+## ⚙️ Softwares 
 
 - Hyprland: Wayland Compositor
 - Ags: For Widgets
@@ -17,7 +17,7 @@ I Use Arch Btw 🤭
 ![[Screenshot 4]](assets/4.png)
 ![[Screenshot 5]](assets/5.png)
 
-## Notice ⚠️
+## ⚠️ Notice 
 
 This rice is still pretty incomplete as also this readme.
 I will be update especially the readme soon.
