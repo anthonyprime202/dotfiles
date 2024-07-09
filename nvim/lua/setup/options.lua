@@ -24,7 +24,7 @@ local opts = {
 	scrolloff = 10,
 
 	hlsearch = true,
-	swapfile = false,
+	swapfile = true,
 
 	splitbelow = true,
 	splitright = true,
