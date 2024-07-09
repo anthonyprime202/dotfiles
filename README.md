@@ -9,7 +9,7 @@
 
 I Use Arch Btw 🤭
 
-## Here are some screenshots
+## 🖼️ Here are some screenshots
 
 ![[Screenshot 1]](assets/1.png)
 ![[Screenshot 2]](assets/2.png)
