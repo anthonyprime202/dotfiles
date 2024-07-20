@@ -14,6 +14,7 @@ return {
 			python = { "black" },
 			c = { "clang-format" },
 			cpp = { "clang-format" },
+			svelte = { "prettier" },
 		},
 	},
 }
