@@ -12,7 +12,8 @@ return { -- Colorscheme
 				enabled = true,
 			},
 			fidget = true,
-			nvimtree = false,
+			nvimtree = true,
+			ufo = false,
 		},
 		custom_highlights = function(colors)
 			return {
@@ -21,7 +22,7 @@ return { -- Colorscheme
 				NormalSB = { bg = colors.none },
 				LineNr = { fg = colors.overlay1 },
 				NvimtreeNormal = {
-					bg = colors.none,
+					bg = colors.mantle,
 				},
 			}
 		end,
