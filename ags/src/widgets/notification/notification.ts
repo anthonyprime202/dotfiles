@@ -59,7 +59,7 @@ const Notification = (notification: NotificationType, popup: boolean) =>
             })
             const time = Widget.Label({
                 className: "notification-popup-time",
-                label: GLib.DateTime.new_from_unix_utc(
+                label: GLib.DateTime.new_from_unix_local(
                     notification.time,
                 ).format("%I:%M %p"),
             })
