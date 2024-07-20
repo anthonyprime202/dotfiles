@@ -37,6 +37,11 @@ local opts = {
 
 	fillchars = { eob = " " }, -- changes the ~ in the end to just a empty space character
 	termguicolors = true,
+
+	foldcolumn = "0", -- '0' is not bad
+	foldlevel = 99, -- Using ufo provider need a large value, feel free to decrease the value
+	foldlevelstart = 99,
+	foldenable = true,
 }
 
 for key, value in pairs(opts) do
