@@ -11,6 +11,18 @@
 
 I Use Arch Btw 🤭
 
+### Dependencies
+
+THese are to make the ags function properly
+```
+papirus-icon-theme
+imagemagick
+bun
+hyprpicker
+hyperlock
+```
+Please install [matcha](https://codeberg.org/QuincePie/matcha) for idle inhibition functionality 
+
 ## 🖼️ Here are some screenshots
 
 ![[Screenshot 1]](assets/1.png)
