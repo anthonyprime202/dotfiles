@@ -11,7 +11,22 @@ local servers = {
 			},
 		},
 	},
-	ruff = {},
+	pylsp = {
+		plugins = {
+			pycodestyle = {
+				ignore = { "W391" },
+				maxLineLength = 100,
+			},
+			flake8 = {
+				igore = { "W391" },
+				maxLineLength = 100,
+			},
+			mccabe = {
+				enabled = false,
+			},
+		},
+	},
+	gopls = {},
 	html = {},
 	tsserver = {},
 	cssls = {},
@@ -20,8 +35,9 @@ local servers = {
 	clangd = {},
 	svelte = {},
 	hyprls = {},
-	somesass_ls = {},
 	bashls = {},
+	sqls = {},
+	stylelint_lsp = {},
 }
 
 return { -- LSP configuration & Plugins
