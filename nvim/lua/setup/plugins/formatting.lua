@@ -15,6 +15,9 @@ return {
 			c = { "clang-format" },
 			cpp = { "clang-format" },
 			svelte = { "prettier" },
+			json = { "prettier" },
+			scss = { "prettier" },
+			html = { "prettier" },
 		},
 	},
 }
