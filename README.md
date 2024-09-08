@@ -1,5 +1,10 @@
 # My Ever Incomplete Catppuccin Rice
 
+## ⚠️ Warning 
+I'm transitioning from Arch to NixOS. Slowly gonna transition everything to nix. 
+Some config files may be updated and may break in other systems. 
+Please stay tuned for the complete release.
+
 ## ⚙️ Softwares 
 
 - Hyprland: Wayland Compositor
