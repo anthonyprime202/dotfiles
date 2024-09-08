@@ -1,5 +1,6 @@
 export default {
     archlinux: "archlinux-icon",
+    nixos: "nixos-icon",
     brightness: "display-brightness-high-symbolic",
     colorPicker: "color-select-symbolic",
     executable: "application-x-executable",

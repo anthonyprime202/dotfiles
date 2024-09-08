@@ -8,7 +8,7 @@ export const LauncherButton = () =>
     Widget.Button({
         className: "bar-menu-button",
         cursor: "pointer",
-        child: Widget.Icon(Icons.archlinux),
+        child: Widget.Icon(Icons.nixos),
         onClicked: async () =>
             await Utils.execAsync("rofi -show drun").catch((e) => print(e)),
     })
