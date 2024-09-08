@@ -22,6 +22,7 @@ return {
 		"saadparwaiz1/cmp_luasnip",
 		"hrsh7th/cmp-nvim-lsp",
 		"hrsh7th/cmp-path",
+		"hrsh7th/cmp-buffer"
 	},
 
 	config = function()
@@ -35,11 +36,12 @@ return {
 					luasnip.lsp_expand(args.body)
 				end,
 			},
-			completetion = { completeoopt = "menu, menuone,noinsert" },
+			completetion = { completeoopt = "menu,menuone,noinsert" },
 			mapping = cmp.mapping.preset.insert(require("setup.keymaps").completions(cmp, luasnip)),
 			sources = {
 				{ name = "nvim_lsp" },
 				{ name = "luasnip" },
+				{ name = "buffer" },
 				{ name = "path" },
 			},
 		})

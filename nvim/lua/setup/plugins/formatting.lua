@@ -3,21 +3,26 @@ return {
 	lazy = false,
 	opts = {
 		notify_on_error = false,
+
+		default_format_opts = {
+			lsp_format = "fallback",
+		},
+
 		format_on_save = {
 			timeout_ms = 500,
 			lsp_fallback = true,
 		},
-		formatters_by_ft = {
+		formatters = {
 			lua = { "stylua" },
-			javascript = { { "prettierd", "prettier" } },
-			typescript = { { "prettierd", "prettier" } },
+			javascript = { "prettier" },
+			typescript = { "prettier" },
+			json = { "prettier" },
+			scss = { "prettier" },
+			html = { "prettier" },
 			python = { "black" },
 			c = { "clang-format" },
 			cpp = { "clang-format" },
 			svelte = { "prettier" },
-			json = { "prettier" },
-			scss = { "prettier" },
-			html = { "prettier" },
 		},
 	},
 }

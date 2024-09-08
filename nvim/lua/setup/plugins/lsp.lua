@@ -11,6 +11,7 @@ local servers = {
 			},
 		},
 	},
+	-- TODO: Add better lsp, diagnostics and formating for python
 	pylsp = {
 		plugins = {
 			pycodestyle = {
@@ -26,12 +27,11 @@ local servers = {
 			},
 		},
 	},
-	gopls = {},
 	html = {},
 	tsserver = {},
 	cssls = {},
 	eslint = {},
-	emmet_ls = {},
+	emmet_language_server = {},
 	clangd = {},
 	svelte = {},
 	hyprls = {},
