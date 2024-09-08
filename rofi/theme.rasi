@@ -3,7 +3,7 @@
 * {
     text-color: @text;
     background-color: transparent;
-}
+    font: "JetBrainsMono Nerd Font 12"; }
 
 window {
     location: north;
