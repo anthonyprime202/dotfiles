@@ -58,7 +58,10 @@ export const ToolsTray = () =>
                         ? Icons.notification.off
                         : Icons.notification.on
                 }),
-                onClicked: () => (Notifications.dnd = !Notifications.dnd),
+                onClicked: async () => {
+                    await Notifications.clear()
+                    Notifications.dnd = !Notifications.dnd
+                },
             }),
         ],
     })
