@@ -14,7 +14,7 @@ Please stay tuned for the complete release.
 - Rofi: For menus
 - Foot: For terminal
 
-I Use Arch Btw 🤭
+I Use NixOS Btw 🤭
 
 ### Dependencies
 
