@@ -12,6 +12,10 @@ const WorkspaceButton = (i: number) =>
                     // Checks if the workspace as clients
                     const workspace = Hyprland.getWorkspace(i)
                     self.toggleClassName(
+                        "bar-fullscreen-workspace",
+                        Boolean(workspace?.hasfullscreen),
+                    )
+                    self.toggleClassName(
                         "bar-active-workspace",
                         Boolean(workspace?.windows),
                     )
