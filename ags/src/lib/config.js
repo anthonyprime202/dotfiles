@@ -22,9 +22,9 @@ export default {
     commands: {
         clock: "date '+%a, %d %b %I:%M %p'",
         colorPicker: "sh -c 'hyprpicker | wl-copy'",
-        matcha: {
-            on: "matcha --daemon",
-            off: "killall matcha",
+        inhibit: {
+            on: "wlinhibit",
+            off: "pkill wlinhibit",
         },
         power: {
             shutdown: "systemctl poweroff",
