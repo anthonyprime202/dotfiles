@@ -168,9 +168,16 @@ export default (
         vpack: "center",
         setup(self) {
             self.attribute = {
-                destroy(first: boolean) {
+                destroy(first: boolean, panel: boolean = false) {
                     if (first) {
                         self.destroy()
+                        return
+                    }
+                    if (panel) {
+                        downSlideRevealer.reveal_child = false
+                        Utils.timeout(Config.animation.popup.down, () => {
+                            self.destroy()
+                        })
                         return
                     }
                     leftSlideRevealer.reveal_child = false

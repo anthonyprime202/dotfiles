@@ -64,30 +64,35 @@ const NotificationPanelWidget = () =>
             const onClosed = (_: unknown, id: number) => {
                 if (!notificationList.get(id)) return
 
-                notificationList.get(id).attribute.destroy()
+                notificationList.get(id).attribute.destroy(false, true)
                 notificationList.delete(id)
             }
 
             self.add(header)
             self.add(
-                Widget.Stack({
-                    children: {
-                        container: Widget.Scrollable({
-                            className: "notification-panel-container",
-                            child: container,
-                            hscroll: "never",
-                            vscroll: "automatic",
-                        }),
-                        cover,
-                    },
-                    setup(self) {
-                        self.hook(Notifications, () => {
-                            self.shown = Notifications.notifications.length
-                                ? "container"
-                                : "cover"
-                        })
-                    },
-                }),
+                Widget.Box({
+                    className: "notification-panel-wrapper",
+                    child: Widget.Stack({
+                        children: {
+                            container: Widget.Scrollable({
+                                className: "notification-panel-container",
+                                child: container,
+                                hscroll: "never",
+                                hpack: "center",
+                                vscroll: "automatic",
+                            }),
+                            cover,
+                        },
+                        setup(self) {
+                            self.hook(Notifications, () => {
+                                self.shown = Notifications.notifications.length
+                                    ? "container"
+                                    : "cover"
+                            })
+                        },
+                    }),
+
+                })
             )
 
             Utils.timeout(300, () => {

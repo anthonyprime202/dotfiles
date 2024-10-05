@@ -46,8 +46,8 @@ export const ToolsTray = () =>
                     idleState.setValue(!idleState.value)
                     await Utils.execAsync(
                         idleState.value
-                            ? Config.commands.matcha.on
-                            : Config.commands.matcha.off,
+                            ? Config.commands.inhibit.on
+                            : Config.commands.inhibit.off,
                     )
                 },
             }),
@@ -59,7 +59,7 @@ export const ToolsTray = () =>
                         : Icons.notification.on
                 }),
                 onClicked: async () => {
-                    await Notifications.clear()
+                    Notifications.popups.forEach(notif => notif.dismiss())
                     Notifications.dnd = !Notifications.dnd
                 },
             }),
