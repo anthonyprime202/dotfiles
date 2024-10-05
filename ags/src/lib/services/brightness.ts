@@ -20,8 +20,8 @@ class BrightnessService extends Service {
 
     set brightness(percent) {
         if (percent < 0) percent = 0
-
         if (percent > 1) percent = 1
+        this.#brightness = percent
     }
 
     constructor() {
