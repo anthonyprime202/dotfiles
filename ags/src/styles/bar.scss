@@ -92,6 +92,15 @@ tooltip {
     }
   }
 
+
+  .bar-fullscreen-workspace {
+    .bar-workspace-fill {
+      min-width: $size;
+      min-height: $size;
+      background: colors.$green;
+    }
+  }
+
   .bar-focused-workspace {
     .bar-workspace-fill {
       min-width: $size * 2.5;
